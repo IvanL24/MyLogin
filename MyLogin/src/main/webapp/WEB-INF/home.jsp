@@ -13,8 +13,8 @@
     </head>
     <body>
         <h1>Home Page</h1>
-        <h3>Hello User</h3>
-        <a href="">Log out</a>
+        <h3>Hello abe</h3>
+        <a href="login?logout">Log out</a>
         
     </body>
 </html>
