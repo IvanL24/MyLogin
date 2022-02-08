@@ -9,7 +9,7 @@
         <h1>Login</h1>
         <form action="login" method="post">
             <label>Username: </label>
-            <input type="text" name="username" id="username" required>
+            <input type="text" name="username" id="username" value="${username}" required>
             <br>
             <label>Password: </label>
             <input type="password" name="password" id="password" required>

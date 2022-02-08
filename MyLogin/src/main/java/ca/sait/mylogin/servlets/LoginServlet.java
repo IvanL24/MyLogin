@@ -1,6 +1,8 @@
 
 package ca.sait.mylogin.servlets;
 
+import ca.sait.mylogin.models.User;
+import ca.sait.mylogin.services.AccountService;
 import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -49,6 +51,21 @@ public class LoginServlet extends HttpServlet {
         
         if(username == null || username.isEmpty()){
             request.setAttribute("message", "Username or password is missing.");
+        } else {
+            AccountService account = new AccountService();
+            
+            User user = account.login(username, password);
+                
+            if(user != null){
+                request.getSession().setAttribute("username", username);
+                
+                response.sendRedirect("home");
+                return;
+            }else {
+                request.setAttribute("username", username);
+                request.setAttribute("message", "invalid credentials.");
+            }
+            
         }
         
         getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
