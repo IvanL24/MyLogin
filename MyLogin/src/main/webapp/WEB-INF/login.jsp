@@ -1,9 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : Feb 4, 2022, 3:30:22 PM
-    Author     : ivanl
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,14 +7,16 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form action="" method="post">
+        <form action="login" method="post">
             <label>Username: </label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" required>
             <br>
             <label>Password: </label>
             <input type="password" name="password" id="password" required>
+            <br>
             <button type="submit">Log in</button>
             
         </form>
+        <p>${message}</p>
     </body>
 </html>
